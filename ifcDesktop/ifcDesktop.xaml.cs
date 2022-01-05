@@ -30,6 +30,8 @@ namespace ifcDesktop
         List<string> ThrItems = new List<string>();
         List<string> ColItems = new List<string>();
         List<string> CjlItems = new List<string>();
+        List<string> NameList = new List<string>();
+        
 
         public MainWindow()
         {
@@ -294,7 +296,24 @@ namespace ifcDesktop
                 getList1.IsEnabled = true;
                 getList2.IsEnabled = true;
                 getList3.IsEnabled = true;
-                
+
+                try
+                {
+                    StreamReader reader = new StreamReader(@".\tmp\namelist.txt");
+
+                    NameList.Clear();
+                    while (true)
+                    {
+                        string str = reader.ReadLine();
+                        if (str == null) break;
+                        NameList.Add(str);
+                    }
+
+                }
+                catch 
+                {
+                    throw;
+                }
             }
         }
 
@@ -314,6 +333,7 @@ namespace ifcDesktop
             Regex re = new Regex(pattern);
             e.Handled = re.IsMatch(e.Text);
         }
+
         private bool CheckDataStorage()
         {
             if (DataStorage.csvFileName == null || DataStorage.csvFileName == "") IfcFileDialog.showDia("请输入输出文件名");
@@ -322,6 +342,51 @@ namespace ifcDesktop
             else if (DataStorage.ThresholdWidth == null || DataStorage.ThresholdWidth == "") IfcFileDialog.showDia("请输入宽度阈值");
             else return true;
             return false;
+        }
+
+        private void Button_Click_AddWindowTHR(object sender, RoutedEventArgs e)
+        {
+            Window1 subwindow = new Window1(NameList,ThrItems,DataStorage.ThrList);
+            subwindow.delegateMes = ChangeTHR;
+
+            subwindow.Show();
+            
+        }
+
+        private void ChangeTHR(string str,List<string>list)
+        {
+            DataStorage.ThrList = str;
+            ThrItems = list;
+        }
+
+        private void Button_Click_AddWindowCOL(object sender, RoutedEventArgs e)
+        {
+            Window1 subwindow = new Window1(NameList, ColItems, DataStorage.ColList);
+            subwindow.delegateMes = ChangeCOL;
+
+            subwindow.Show();
+
+        }
+
+        private void ChangeCOL(string str, List<string> list)
+        {
+            DataStorage.ColList = str;
+            ColItems = list;
+        }
+
+        private void Button_Click_AddWindowCJL(object sender, RoutedEventArgs e)
+        {
+            Window1 subwindow = new Window1(NameList, CjlItems, DataStorage.CjlList);
+            subwindow.delegateMes = ChangeCJL;
+
+            subwindow.Show();
+
+        }
+
+        private void ChangeCJL(string str, List<string> list)
+        {
+            DataStorage.CjlList = str;
+            CjlItems = list;
         }
     }
     

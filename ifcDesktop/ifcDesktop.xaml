@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ifcDesktop"
         mc:Ignorable="d"
-        Title="IfcDesktop" Height="470" Width="418">
+        Title="IfcDesktop" Height="470" Width="418" ResizeMode="NoResize">
     <Grid Margin="0,0,0,-5">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="29*"/>
@@ -16,27 +16,27 @@
         <Button x:Name="BeginCal" Content="开始计算" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" Width="76" Click="Button_Click_RunCal" IsEnabled="False"/>
         <Button Content="退出" HorizontalAlignment="Left" Margin="10,82,0,0" VerticalAlignment="Top" Width="76" Click="Button_Click_Exit"/>
         <TextBlock HorizontalAlignment="Left" Margin="102,31,0,0" Text="ifc文件" TextWrapping="Wrap" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="17,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" IsEnabled="False" Grid.Column="1" x:Name="IFCFile"/>
+        <TextBox HorizontalAlignment="Left" Margin="17,30,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" IsEnabled="False" Grid.Column="1" x:Name="IFCFile" Height="Auto" MaxHeight="17.25" MaxWidth="210"/>
         <Button Content="..." HorizontalAlignment="Left" Margin="238,30,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.565,-0.335" Height="15" Width="13" Grid.Column="1" Click="Button_Click_LoadIfc"/>
         <TextBlock HorizontalAlignment="Left" Margin="102,120,0,0" Text="宽度阈值" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-        <TextBox InputMethod.IsInputMethodEnabled="False" PreviewTextInput="limitnumber"  HorizontalAlignment="Left" Margin="17,119,0,0" Text=" " TextWrapping="Wrap" VerticalAlignment="Top" Width="55" Grid.Column="1" RenderTransformOrigin="1.046,0.431" x:Name="THW" IsEnabled="False"/>
+        <TextBox InputMethod.IsInputMethodEnabled="False" PreviewTextInput="limitnumber"  HorizontalAlignment="Left" Margin="17,119,0,0" Text=" " TextWrapping="Wrap" VerticalAlignment="Top" Width="55" Grid.Column="1" RenderTransformOrigin="1.046,0.431" x:Name="THW" IsEnabled="False" MaxWidth="55" MaxHeight="17.24"/>
         <TextBlock HorizontalAlignment="Left" Margin="118,120,0,0" Text="长度阈值" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" RenderTransformOrigin="0.479,0.597"/>
-        <TextBox InputMethod.IsInputMethodEnabled="False" PreviewTextInput="limitnumber" x:Name="THH" HorizontalAlignment="Left" Margin="171,119,0,0" Text=" " TextWrapping="Wrap" VerticalAlignment="Top" Width="56" Grid.Column="1" RenderTransformOrigin="0.892,0.74" IsEnabled="False"/>
+        <TextBox InputMethod.IsInputMethodEnabled="False" PreviewTextInput="limitnumber" x:Name="THH" HorizontalAlignment="Left" Margin="171,119,0,0" Text=" " TextWrapping="Wrap" VerticalAlignment="Top" Width="56" Grid.Column="1" RenderTransformOrigin="0.892,0.74" IsEnabled="False" MaxWidth="56" MaxHeight="17.24"/>
         <TextBlock HorizontalAlignment="Left" Margin="102,53,0,0" Text="输出目录" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-        <TextBox HorizontalAlignment="Left" Margin="17,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" IsEnabled="False" Grid.Column="1" x:Name="OutputFolder"/>
+        <TextBox HorizontalAlignment="Left" Margin="17,52,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" IsEnabled="False" Grid.Column="1" x:Name="OutputFolder" Height="Auto" MaxWidth="210" MaxHeight="17.24"/>
         <Button x:Name="getFile1" Content="..." HorizontalAlignment="Left" Margin="238,53,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.565,-0.335" Height="15" Width="13" Grid.Column="1" Click="Button_Click_LoadcsvF" IsEnabled="False"/>
         <TextBlock HorizontalAlignment="Left" Margin="102,10,0,0" Text="输出/输入设置" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
         <TextBlock HorizontalAlignment="Left" Margin="102,101,0,0" Text="计算设置" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
         <TextBlock HorizontalAlignment="Left" Margin="102,77,0,0" Text="输出名称" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-        <TextBox HorizontalAlignment="Left" Margin="17,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" UndoLimit="16" Grid.Column="1" x:Name="OutputName" IsEnabled="False"/>
+        <TextBox HorizontalAlignment="Left" Margin="17,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210" UndoLimit="16" Grid.Column="1" x:Name="OutputName" IsEnabled="False" Height="Auto" MaxWidth="210" MaxHeight="17.24"/>
         <TextBlock HorizontalAlignment="Left" Margin="102,140,0,0" Text="预剔除名单" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
         <TextBlock HorizontalAlignment="Left" Margin="102,224,0,0" Text="取消合并测试名单" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
         <TextBlock HorizontalAlignment="Left" Margin="102,319,0,0" Text="取消判断测试名单" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-        <TextBox x:Name="THR" HorizontalAlignment="Left" Margin="102,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="270" Height="59" Grid.ColumnSpan="2" IsEnabled="False"/>
-        <TextBox x:Name="COL" HorizontalAlignment="Left" Margin="102,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="270" Height="70" Grid.ColumnSpan="2" IsEnabled="False"/>
-        <TextBox x:Name="CJL" HorizontalAlignment="Left" Margin="102,339,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="270" Height="86" Grid.ColumnSpan="2" IsEnabled="False"/>
-        <Button x:Name="getList1" Content="..." HorizontalAlignment="Left" Margin="238,204,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.565,-0.335" Height="15" Width="13" Grid.Column="1" IsEnabled="False"/>
-        <Button x:Name="getList2" Content="..." HorizontalAlignment="Left" Margin="238,299,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.565,-0.335" Height="15" Width="13" Grid.Column="1" IsEnabled="False"/>
-        <Button x:Name="getList3" Content="..." HorizontalAlignment="Left" Margin="238,410,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.565,-0.335" Height="15" Width="13" Grid.Column="1" IsEnabled="False"/>
+        <TextBox x:Name="THR" HorizontalAlignment="Left" Margin="102,160,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="270" Height="59" Grid.ColumnSpan="2" IsEnabled="False" MaxWidth="270" MaxHeight="59"/>
+        <TextBox x:Name="COL" HorizontalAlignment="Left" Margin="102,244,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="270" Height="70" Grid.ColumnSpan="2" IsEnabled="False" MaxWidth="270" MaxHeight="70"/>
+        <TextBox x:Name="CJL" HorizontalAlignment="Left" Margin="102,339,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="270" Height="86" Grid.ColumnSpan="2" IsEnabled="False" MaxWidth="270" MaxHeight="86"/>
+        <Button x:Name="getList1" Content="..." HorizontalAlignment="Left" Margin="238,204,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.565,-0.335" Height="15" Width="13" Grid.Column="1" IsEnabled="False" Click="Button_Click_AddWindowTHR"/>
+        <Button x:Name="getList2" Content="..." HorizontalAlignment="Left" Margin="238,299,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.565,-0.335" Height="15" Width="13" Grid.Column="1" IsEnabled="False" Click="Button_Click_AddWindowCOL"/>
+        <Button x:Name="getList3" Content="..." HorizontalAlignment="Left" Margin="238,410,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.565,-0.335" Height="15" Width="13" Grid.Column="1" IsEnabled="False" Click="Button_Click_AddWindowCJL"/>
     </Grid>
 </Window>

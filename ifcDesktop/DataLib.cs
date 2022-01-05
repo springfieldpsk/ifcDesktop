@@ -7,12 +7,12 @@ namespace ifcDesktop
 {
     class DataLib : INotifyPropertyChanged
     {
-        private string _IFCFilePath = null;
-        private string _csvFilePath = null;
-        private string _csvFileName = null;
-        private string _ThrList = null;
-        private string _ColList = null;
-        private string _CjlList = null;
+        private string _IFCFilePath = "";
+        private string _csvFilePath = "";
+        private string _csvFileName = "";
+        private string _ThrList = "";
+        private string _ColList = "";
+        private string _CjlList = "";
         private float _ThresholdWidth = 0.2F;
         private float _ThresholdHeight = 0.2F;
         public event PropertyChangedEventHandler PropertyChanged;
